@@ -35,3 +35,7 @@
   @apply container mx-auto max-w-lg bg-white self-start
   rounded-md
 }
+
+.btn{
+  @apply text-center items-center hover:bg-color-primary-light text-white font-medium py-3 px-4  rounded-md focus:outline-none;
+}

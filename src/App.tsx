@@ -3,6 +3,7 @@ import logo from './assets/img/fliqpay-logo.png';
 import './styles/App.css';
 import FormPayoutAmount from './components/form-payout-amount';
 import FormPayoutReceipt from './components/form-payout-receipt';
+import PayoutReview from './components/payout-review';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       </header>
 
       <div className="body">
-        <FormPayoutReceipt/>
+        <PayoutReview/>
       </div>
 
     </div>
