@@ -12,7 +12,7 @@
   py-4 
   bg-white
 
-  md:px-60
+  md:px-40
 }
 
 .nav__logo{
@@ -26,6 +26,8 @@
   h-screen
   bg-gray-50
   py-20
+  px-4
+  sm:px-0
   ;
 }
 

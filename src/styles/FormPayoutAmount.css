@@ -10,11 +10,16 @@
 }
 
 .form-head__main{
-  @apply font-semibold text-lg text-color-primary-dark
+  @apply font-semibold text-sm text-color-primary-dark
+
+  md:text-lg
 }
 
 .form-head__sub{
-  @apply font-normal text-gray-500
+  @apply font-medium text-gray-500 text-xs
+  md:text-sm
+
+
 }
 
 
@@ -45,13 +50,11 @@
 }
 
 .pay-input__currency--select{
-  @apply bg-gray-100 focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-3 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-r-md;
+  @apply bg-gray-100 border border-t  border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-3 pr-7 text-gray-500 sm:text-sm rounded-r-md;
 }
 
 .pay-input__buttons{
-  @apply grid grid-cols-2 gap-4 mt-2
-  md:mt-4
-  ;
+  @apply grid grid-cols-2 gap-4 mt-4;
 }
 
 
