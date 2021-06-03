@@ -3,16 +3,19 @@ import React from 'react';
 import '../styles/App.css';
  import { Formik, Form, Field, ErrorMessage } from 'formik';
  import * as Yup from "yup";
+import 'alpinejs';
+import {useState} from 'react'; 
 
- 
+
 
 function FormPayoutReceipt () {
-  var stringToHTML = function (str: string) {
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(str, 'text/html');
-    return doc.body;
+
+  const [toggleState, setToggleState] = useState(1);
+
+  const toggleTab = (index: any) => {
+    console.log(index);
+    setToggleState(index);
   };
-  const required = stringToHTML(`<p className=".pay-input__error-message">Required</p>`)
 
   return (
     <Formik
@@ -61,9 +64,57 @@ function FormPayoutReceipt () {
           <p className="form-subheading__main">Bank details</p>
         </div>
 
-        <div>
+        
+        <div className="tab-container">
+          <div className="tab-container__buttons">
+            <button className={toggleState === 1 ? "tab-button active-tab-button" : "tab-button"} onClick={() => toggleTab(1)}>
+              Inside Europe
+            </button>
 
+            <button className={toggleState === 2 ? "tab-button active-tab-button" : "tab-button"} onClick={() => toggleTab(2)}>
+              Outside Europe
+            </button>
+
+          </div>
+
+          <div className="tab-container__content">
+            <div className={toggleState === 1 ? "tab-content  active-tab-content" : "tab-content"}>
+
+              {/* IBAN */}
+              <div>
+                <div className="pay-input">
+                  <label className="pay-input__label" htmlFor="youSend">IBAN</label>
+                  <Field className="pay-input__price" name="youSend" type="text" placeholder="0.00" />
+                </div>
+                <ErrorMessage render={msg => <div className="pay-input__error-message">{msg}</div>} name="youSend" />
+              </div>
+            </div>
+
+          <div className={toggleState === 2 ? "tab-content  active-tab-content" : "tab-content"}>
+
+              {/* You send */}
+              <div>
+                <div className="pay-input">
+                  <label className="pay-input__label" htmlFor="youSend">SWIFT / BIC code</label>
+                  <Field className="pay-input__price" name="youSend" type="text" placeholder="BUKBGB22" />
+                </div>
+                <ErrorMessage render={msg => <div className="pay-input__error-message">{msg}</div>} name="youSend" />
+              </div>
+
+              {/* Recepient gets */}
+              <div>
+                <div className="pay-input">
+                  <label className="pay-input__label"  htmlFor="recipientGets">IBAN / Account Number</label>
+                  <Field className="pay-input__price" name="recipientGets" type="text" placeholder="01234567891" />
+                </div>
+                <ErrorMessage render={msg => <div className="pay-input__error-message">{msg}</div>} name="recipientGets" />
+              </div>
+            
+          </div>
+      </div>
         </div>
+  
+
 
         <div className="pay-input__buttons">
           <a className="pay-input__buttons--compare" href="/">Compare Rates</a>

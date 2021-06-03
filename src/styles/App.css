@@ -22,7 +22,7 @@
 .body{
   @apply
   grid
-  h-screen
+  min-h-screen
   bg-gray-50
   py-20
   px-4
@@ -35,6 +35,56 @@
   rounded-md
 }
 
+.form-subheading{
+  @apply mt-5
+}
+
+.form-subheading__main{
+  @apply font-semibold text-sm text-color-primary-dark
+  md:text-sm
+  border-b border-gray-200 pb-4
+}
+
 .btn{
   @apply text-center items-center hover:bg-color-primary-light text-white font-medium py-3 px-4  rounded-md focus:outline-none;
+}
+
+
+/* Stlye for tab */
+
+.tab-container{
+  @apply flex flex-col relative
+}
+
+.tab-container__buttons {
+  @apply flex mb-5 mt-2;
+}
+
+.tab-button {
+  @apply text-left bg-white w-3/6 pl-4 pb-3 cursor-pointer text-gray-400
+  box-content relative outline-none text-xs font-semibold
+  md:text-sm
+}
+
+.tab-button:focus{
+  @apply outline-none
+}
+
+.active-tab-button  {
+  @apply bg-white text-color-primary pb-3 border-b-2 border-blue-600
+
+}
+
+
+.tab-container__content {
+ @apply grid;
+}
+
+.tab-content {
+  @apply grid bg-white w-full h-full hidden
+
+}
+
+.active-tab-content {
+  @apply grid gap-y-2
 }

@@ -23,11 +23,7 @@
   md:text-sm
 }
 
-.form-subheading__main{
-  @apply font-semibold text-xs text-color-primary-dark
-  md:text-sm
-  border-b border-gray-200 pb-4
-}
+
 
 .pay-input{
   @apply mt-1 relative rounded-md shadow-sm;
