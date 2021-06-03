@@ -3,10 +3,18 @@
     purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
      darkMode: false, // or 'media' or 'class'
      theme: {
-       extend: {},
+       extend: {
+         colors:{
+          'color-primary': '#4305EB', 
+          'color-primary-light': '#A98CF6', 
+          'color-primary-dark': '#2C0C6A'
+         }
+       },
      },
      variants: {
        extend: {},
      },
-     plugins: [],
+     plugins: [
+      require('@tailwindcss/forms'),
+     ],
    }

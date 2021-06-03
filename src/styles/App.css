@@ -32,5 +32,4 @@
 .form{
   @apply container mx-auto max-w-lg bg-white self-start
   rounded-md
-  h-96
 }

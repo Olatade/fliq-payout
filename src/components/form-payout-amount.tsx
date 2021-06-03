@@ -11,13 +11,12 @@ function FormPayoutAmount() {
     <Formik
       initialValues={{ firstName: "", lastName: "", email: "" }}
       validationSchema={Yup.object({
-        firstName: Yup.string()
-          .max(15, "Must be 15 characters or less")
-          .required("Required"),
-        lastName: Yup.string()
-          .max(20, "Must be 20 characters or less")
-          .required("Required"),
-        email: Yup.string().email("Invalid email address").required("Required"),
+        youSend: Yup.string()
+        .max(15, "Must be 15 characters or less")
+        .required("Required"),
+        recipientGets: Yup.string()
+        .max(15, "Must be 15 characters or less")
+        .required("Required"),
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
@@ -29,23 +28,45 @@ function FormPayoutAmount() {
     >
       <Form className="form">
         <div className="form-head">
-          <p>One-time Payout</p>
-          <p>Send money internationally</p>
+          <p className="form-head__main">One-time Payout</p>
+          <p className="form-head__sub">Send money internationally</p>
+        </div>
+
+        {/* You send */}
+        <div className="pay-input">
+          <label className="pay-input__label"  htmlFor="youSend">You send</label>
+          <Field className="pay-input__price" name="youSend" type="text" placeholder="0.00" />
+          <div className="pay-input__currency">
+            <label className="sr-only" htmlFor="sendCurrency">Currency</label>
+            <Field className="pay-input__currency--select" name="sendCurrency" as="select">
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="blue">Blue</option>
+            </Field>
+          </div>
+        </div>
+        <ErrorMessage name="youSend" />
+
+        {/* Recepient gets */}
+        <div className="pay-input">
+          <label className="pay-input__label"  htmlFor="recipientGets">Recipient gets </label>
+          <Field className="pay-input__price" name="recipientGets" type="text" placeholder="0.00" />
+          <div className="pay-input__currency">
+            <label className="sr-only" htmlFor="receiveCurrency">Currency</label>
+            <Field className="pay-input__currency--select" name="receiveCurrency" as="select">
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="blue">Blue</option>
+            </Field>
+          </div>
+        </div>
+        <ErrorMessage name="recipientGets" />
+
+        <div className="pay-input__buttons">
+          <a className="pay-input__buttons--compare" href="/">Compare Rates</a>
+          <button className="pay-input__buttons--continue" type="submit">Continue</button>
         </div>
         
-        <label htmlFor="firstName">First Name</label>
-        <Field name="firstName" type="text" />
-        <ErrorMessage name="firstName" />
-
-        <label htmlFor="lastName">Last Name</label>
-        <Field name="lastName" type="text" />
-        <ErrorMessage name="lastName" />
-
-        <label htmlFor="email">Email Address</label>
-        <Field name="email" type="email" />
-        <ErrorMessage name="email" />
-
-        <button type="submit">Submit</button>
       </Form>
     </Formik>
   );
