@@ -24,7 +24,7 @@
   @apply
   grid
   h-screen
-  bg-green-400
+  bg-gray-200
   py-20
   ;
 }

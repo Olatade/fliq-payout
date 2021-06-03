@@ -1,14 +1,14 @@
 .form{
-  @apply p-5 
-  /* grid auto-rows-max gap-2; */
+  @apply px-5 py-6 
+  grid auto-rows-max gap-2;
 }
 
 .form-head__main{
-  @apply font-semibold text-lg text-color-primary-dark
+  @apply font-semibold text-sm text-color-primary-dark
 }
 
 .form-head__sub{
-  @apply font-normal text-sm text-gray-500
+  @apply font-normal text-xs text-gray-500
 }
 
 
@@ -17,11 +17,16 @@
 }
 
 .pay-input__label{
-  @apply block text-sm font-medium text-gray-700;
+  @apply block text-xs font-medium text-gray-500 absolute origin-top-left mt-2 pl-3;
+}
+
+.pay-input__error-message{
+  @apply text-red-700 text-xs mt-1
 }
 
 .pay-input__price{
-  @apply focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-12 sm:text-sm border-gray-300 rounded-md;
+  @apply focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-12 pt-6 sm:text-sm border-gray-300 rounded-md
+  ;
 }
 
 .pay-input__currency{
@@ -29,22 +34,43 @@
 }
 
 .pay-input__currency--select{
-  @apply focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md;
+  @apply bg-gray-200 focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-r-md;
 }
 
 .pay-input__buttons{
-  @apply grid grid-cols-2 gap-2;
+  @apply grid grid-cols-2 gap-4 mt-2;
 }
 
 
 .pay-input__buttons--compare{
-  @apply inline-block align-baseline border border-color-primary rounded-md py-2 px-4 font-medium text-center text-sm text-color-primary hover:text-blue-800;
+  @apply inline-block align-baseline font-semibold border border-color-primary rounded-md py-2 px-4 font-medium text-center text-sm text-color-primary hover:text-blue-800;
 }
 
 .pay-input__buttons--continue{
-  @apply bg-color-primary-light hover:bg-color-primary-light text-white font-medium py-2 px-4  rounded-md focus:outline-none;
+  @apply bg-color-primary-light items-center hover:bg-color-primary-light text-white font-medium py-2 px-4  rounded-md focus:outline-none;
 }
 
+
+
+.fee{
+
+}
+
+.fee__line{
+  @apply border-l-2 border-gray-300 h-3 mt-0 pt-0
+}
+
+.fee__item{
+  @apply pl-3
+}
+
+.fee__unit{
+  @apply text-xs font-bold inline-block w-24 text-gray-500
+}
+
+.fee__description{
+  @apply text-xs font-normal text-gray-500
+}
 
 
 
