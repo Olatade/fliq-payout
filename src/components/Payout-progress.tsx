@@ -8,64 +8,61 @@ import 'alpinejs';
 function PayoutProgress() {
 
   return (
-    <div className="hidden md:block w-full mx-auto border border-red-700">
+    <div className="progress-bar">
       <div className="flex">
-        <div className="flex-1"></div>
 
-        <div className="flex-1">
-          <div className="w-2 h-2 bg-color-primary mx-auto rounded-full text-lg text-gray-500 flex items-center">
-            <span className="text-gray-500 text-center w-full"><i className="fa fa-check w-full fill-current white"></i></span>
+        <div className="left-pad"></div>
+
+        <div className="step step-1">
+          <div className="step__inner active"></div>
+        </div>
+
+
+        <div className="progress">
+          <div className="progress__inner">
+            <div className="progress__length" style={{ width: '100%' }}></div>
           </div>
         </div>
 
 
-        <div className="w-1/6 align-center items-center align-middle content-center flex">
-          <div className="w-full bg-gray-200 rounded items-center align-middle align-center flex-1">
-            <div className="bg-color-primary text-xs leading-none py-1 text-center text-grey-darkest rounded w-full" style={{ width: '100%' }}></div>
+        <div className="step step-2">
+          <div className="step__inner active"></div>
+        </div>
+
+        <div className="progress">
+          <div className="progress__inner">
+            <div className="progress__length" style={{ width: '20%' }}></div>
+          </div>
+        </div>
+
+        <div className="step step-3">
+          <div className=" step__inner"></div>
+        </div>
+
+
+        <div className="progress">
+          <div className="progress__inner">
+            <div className="progress__length" style={{ width: '0%' }}></div>
           </div>
         </div>
 
 
-        <div className="flex-1">
-          <div className="w-2 h-2 bg-color-primary mx-auto rounded-full text-lg text-white flex items-center">
-            <span className="text-white text-center w-full"><i className="fa fa-check w-full fill-current white"></i></span>
-          </div>
-        </div>
-
-        <div className="w-1/6 align-center items-center align-middle content-center flex">
-          <div className="w-full bg-gray-200 rounded items-center align-middle align-center flex-1">
-            <div className="bg-color-primary text-xs leading-none py-1 text-center text-grey-darkest rounded " style={{ width: '20%' }}></div>
-          </div>
-        </div>
-
-        <div className="flex-1">
-          <div className="w-2 h-2 bg-gray-300  mx-auto rounded-full text-lg text-white flex items-center"></div>
+        <div className="step step-4">
+          <div className="step__inner"></div>
         </div>
 
 
-        <div className="w-1/6 align-center items-center align-middle content-center flex">
-          <div className="w-full bg-gray-200 rounded items-center align-middle align-center flex-1">
-            <div className="bg-color-primary text-xs leading-none py-1 text-center text-grey-darkest rounded" style={{ width: '0%' }}></div>
-          </div>
-        </div>
-
-
-        <div className="flex-1">
-          <div className="w-2 h-2 bg-gray-300  mx-auto rounded-full text-lg text-white flex items-center"></div>
-        </div>
-
-
-        <div className="flex-1"></div>
+        <div className="right-pad"></div>
       </div>
 
-      <div className="flex text-xs content-center text-center">
-        <div className="w-1/4">Amount</div>
+      <div className="step-names">
+        <div>Amount</div>
 
-        <div className="w-1/4">Receipt</div>
+        <div>Receipt</div>
 
-        <div className="w-1/4">Review</div>
+        <div>Review</div>
 
-        <div className="w-1/4">Pay</div>
+        <div>Pay</div>
       </div>
 
     </div>

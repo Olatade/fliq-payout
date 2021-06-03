@@ -4,21 +4,18 @@
 }
 
 .nav {
-  @apply 
-  flex
-  gap-4
-  items-center
+  @apply flex gap-4 items-center
   px-4 
   py-4 
   bg-white
-  border
-  border-red-700
-
   md:px-40
 }
 
 .nav__logo{
-  @apply h-8
+  @apply h-5
+
+  md:h-8
+
 }
 
 

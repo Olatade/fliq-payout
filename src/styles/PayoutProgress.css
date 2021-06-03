@@ -1,0 +1,35 @@
+.progress-bar{
+  @apply hidden md:block w-full mx-auto
+}
+
+.left-pad, .right-pad{ @apply flex-1 }
+
+.step{ @apply flex-1}
+
+.step__inner{
+  @apply w-2 h-2 bg-gray-300 mx-auto rounded-full text-lg text-gray-500 flex items-center
+}
+
+/* change background when step is active */
+.step__inner.active{
+  @apply bg-color-primary
+}
+
+.progress{
+  @apply w-1/6 items-center align-middle content-center flex
+}
+
+.progress__inner{
+  @apply w-full bg-gray-200 rounded items-center align-middle  flex-1
+}
+
+.progress__length{
+  @apply bg-color-primary text-xs leading-none py-1 text-center text-gray-700 rounded w-full
+}
+
+.step-names{
+  @apply flex text-xs content-center text-center pt-1
+}
+.step-names div{
+  @apply w-1/4
+}
