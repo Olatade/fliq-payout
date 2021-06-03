@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './assets/img/fliqpay-logo.png';
 import './styles/App.css';
 import FormPayoutAmount from './components/form-payout-amount';
+import FormPayoutReceipt from './components/form-payout-receipt';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       </header>
 
       <div className="body">
-        <FormPayoutAmount/>
+        <FormPayoutReceipt/>
       </div>
 
     </div>
