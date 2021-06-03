@@ -11,6 +11,8 @@
   px-4 
   py-4 
   bg-white
+  border
+  border-red-700
 
   md:px-40
 }

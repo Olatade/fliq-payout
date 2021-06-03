@@ -4,6 +4,8 @@ import './styles/App.css';
 import FormPayoutAmount from './components/form-payout-amount';
 import FormPayoutReceipt from './components/form-payout-receipt';
 import PayoutReview from './components/payout-review';
+import PayoutProgress from './components/Payout-progress';
+
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
 
       <header className="nav">
         <img src={logo} className="nav__logo" alt="logo" />
-        <div className="progress-bar">This is the progress bar</div>
+        <PayoutProgress/>
       </header>
 
       <div className="body">
