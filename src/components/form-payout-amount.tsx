@@ -1,7 +1,7 @@
-import '../styles/FormPayoutAmount.css';
 import React from 'react';
-import '../styles/App.css';
+// import '../styles/FormPayoutAmount.css';
  import { Formik, Form, Field, ErrorMessage } from 'formik';
+ import { Link } from 'react-router-dom';
  import * as Yup from "yup";
  import { CircleFlag } from 'react-circle-flags';
  import currencies from '../data/currencies';
@@ -13,7 +13,7 @@ function FormPayoutAmount() {
     var doc = parser.parseFromString(str, 'text/html');
     return doc.body;
   };
-  const required = stringToHTML(`<p className=".pay-input__error-message">Required</p>`)
+  const required = stringToHTML(`<p className=".form-group__error-message">Required</p>`)
 
   return (
     <Formik
@@ -34,27 +34,27 @@ function FormPayoutAmount() {
         }, 400);
       }}
     >
-      <Form className="form">
-        <div className="form-head">
-          <p className="form-head__main">One-time Payout</p>
-          <p className="form-head__sub">Send money internationally</p>
+      <Form className="card">
+        <div className="card-head">
+          <p className="card-head__main">One-time Payout</p>
+          <p className="card-head__sub">Send money internationally</p>
         </div>
 
         {/* You send */}
         <div>
-          <div className="pay-input">
-            <label className="pay-input__label"  htmlFor="youSend">You send</label>
-            <Field className="pay-input__price" name="youSend" type="text" placeholder="0.00" />
-            <div className="pay-input__currency">
+          <div className="form-group inner-label">
+            <label className="form-group__label"  htmlFor="youSend">You send</label>
+            <Field className="form-group__input" name="youSend" type="text" placeholder="0.00" />
+            <div className="select-group">
               <label className="sr-only" htmlFor="sendCurrency">Currency</label>
-              <Field className="pay-input__currency--select" name="sendCurrency" as="select">
+              <Field className="form-group__select" name="sendCurrency" as="select">
                 {currencies.map((currency) => (
                   <option value={currency} key={currency}>{currency}</option>
                 ))}
               </Field>
             </div>
           </div>
-          <ErrorMessage render={msg => <div className="pay-input__error-message">{msg}</div>} name="youSend" />
+          <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="youSend" />
         </div>
 
         <div className="Fee">
@@ -69,24 +69,24 @@ function FormPayoutAmount() {
 
         {/* Recepient gets */}
         <div>
-          <div className="pay-input">
-            <label className="pay-input__label"  htmlFor="recipientGets">Recipient gets </label>
-            <Field className="pay-input__price" name="recipientGets" type="text" placeholder="0.00" />
-            <div className="pay-input__currency">
+          <div className="form-group inner-label">
+            <label className="form-group__label"  htmlFor="recipientGets">Recipient gets </label>
+            <Field className="form-group__input" name="recipientGets" type="text" placeholder="0.00" />
+            <div className="select-group">
               <label className="sr-only" htmlFor="receiveCurrency">Currency</label>
-              <Field className="pay-input__currency--select" name="receiveCurrency" as="select">
+              <Field className="form-group__select" name="receiveCurrency" as="select">
                 {currencies.map((currency) => (
                   <option value={currency} key={currency} >{currency}</option>
                 ))}
               </Field>
             </div>
           </div>
-          <ErrorMessage render={msg => <div className="pay-input__error-message">{msg}</div>} name="recipientGets" />
+          <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="recipientGets" />
         </div>
 
-        <div className="pay-input__buttons">
-          <a className="pay-input__buttons--compare" href="/">Compare Rates</a>
-          <button className="pay-input__buttons--continue" type="submit">Continue</button>
+        <div className="grid grid-cols-2 gap-4 mt-4;">
+          <a className="btn-hollow " href="/">Compare Rates</a>
+          <button className="btn-full " type="submit">Continue</button>
         </div>
         
       </Form>

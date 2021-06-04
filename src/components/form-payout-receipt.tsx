@@ -1,6 +1,3 @@
-import '../styles/FormPayoutReceipt.css';
-import React from 'react';
-import '../styles/App.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 import 'alpinejs';
@@ -44,32 +41,32 @@ function FormPayoutReceipt() {
         }, 400);
       }}
     >
-      <Form className="form">
-        <div className="form-head">
-          <p className="form-head__main">Your Receipt</p>
-          <p className="form-head__sub">Who are you sending money to?</p>
+      <Form className="card">
+        <div className="card-head">
+          <p className="card-head__main">Your Receipt</p>
+          <p className="card-head__sub">Who are you sending money to?</p>
         </div>
 
         {/* Email */}
         <div>
-          <div className="pay-input">
-            <label className="pay-input__label" htmlFor="email">Their email (optional)</label>
-            <Field className="pay-input__price" name="email" type="text" placeholder="" />
+          <div className="form-group">
+            <label className="form-group__label" htmlFor="email">Their email (optional)</label>
+            <Field className="form-group__input" name="email" type="text" placeholder="" />
           </div>
-          <ErrorMessage render={msg => <div className="pay-input__error-message">{msg}</div>} name="email" />
+          <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="email" />
         </div>
 
         {/* Full name */}
         <div>
-          <div className="pay-input">
-            <label className="pay-input__label" htmlFor="fullName">Full name of the account holder</label>
-            <Field className="pay-input__price" name="fullName" type="text" placeholder="" />
+          <div className="form-group">
+            <label className="form-group__label" htmlFor="fullName">Full name of the account holder</label>
+            <Field className="form-group__input" name="fullName" type="text" placeholder="" />
           </div>
-          <ErrorMessage render={msg => <div className="pay-input__error-message">{msg}</div>} name="fullName" />
+          <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="fullName" />
         </div>
 
-        <div className="form-subheading ">
-          <p className="form-subheading__main">Bank details</p>
+        <div className="card-subheading ">
+          <p className="card-subheading__main">Bank details</p>
         </div>
 
 
@@ -90,11 +87,11 @@ function FormPayoutReceipt() {
 
               {/* IBAN */}
               <div>
-                <div className="pay-input">
-                  <label className="pay-input__label" htmlFor="iban">IBAN</label>
-                  <Field className="pay-input__price" name="iban" type="text" placeholder="0.00" />
+                <div className="form-group">
+                  <label className="form-group__label" htmlFor="iban">IBAN</label>
+                  <Field className="form-group__input" name="iban" type="text" placeholder="0.00" />
                 </div>
-                <ErrorMessage render={msg => <div className="pay-input__error-message">{msg}</div>} name="iban" />
+                <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="iban" />
               </div>
             </div>
 
@@ -102,20 +99,20 @@ function FormPayoutReceipt() {
 
               {/* SWIFT */}
               <div>
-                <div className="pay-input">
-                  <label className="pay-input__label" htmlFor="swift">SWIFT / BIC code</label>
-                  <Field className="pay-input__price" name="swift" type="text" placeholder="BUKBGB22" />
+                <div className="form-group">
+                  <label className="form-group__label" htmlFor="swift">SWIFT / BIC code</label>
+                  <Field className="form-group__input" name="swift" type="text" placeholder="BUKBGB22" />
                 </div>
-                <ErrorMessage render={msg => <div className="pay-input__error-message">{msg}</div>} name="swift" />
+                <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="swift" />
               </div>
 
               {/* IBAN EUROPE */}
               <div>
-                <div className="pay-input">
-                  <label className="pay-input__label" htmlFor="iban">IBAN</label>
-                  <Field className="pay-input__price" name="iban" type="text" placeholder="0.00" />
+                <div className="form-group">
+                  <label className="form-group__label" htmlFor="iban">IBAN</label>
+                  <Field className="form-group__input" name="iban" type="text" placeholder="0.00" />
                 </div>
-                <ErrorMessage render={msg => <div className="pay-input__error-message">{msg}</div>} name="iban" />
+                <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="iban" />
               </div>
 
             </div>
@@ -124,9 +121,8 @@ function FormPayoutReceipt() {
 
 
 
-        <div className="pay-input__buttons">
-          <a className="pay-input__buttons--compare" href="/">Compare Rates</a>
-          <button className="pay-input__buttons--continue" type="submit">Continue</button>
+        <div className="grid mt-4">
+          <button className="btn-full" type="submit">Continue</button>
         </div>
 
       </Form>

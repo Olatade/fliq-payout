@@ -2,6 +2,27 @@
   @apply min-h-screen;
 }
 
+/* CARD STYLES */
+.card{
+  @apply px-5 py-6 grid auto-rows-max gap-2 border border-gray-100
+  md:gap-4 md:px-8 md:py-8
+}
+
+.card-head{
+  @apply border-b border-gray-200 pb-4
+}
+
+.card-head__main{
+  @apply font-semibold text-sm text-color-primary-dark
+  md:text-lg
+}
+
+.card-head__sub{
+  @apply font-medium text-gray-500 text-xs
+  md:text-sm
+}
+
+
 /* TOP NAVIGATION */
 .nav {
   @apply flex gap-4 items-center px-4 py-4 bg-white
@@ -20,15 +41,17 @@
 }
 
 /* CARD ( container for forms and receipts */
-.form{
-  @apply container mx-auto max-w-lg bg-white self-start rounded-md
+.card{
+  @apply container mx-auto mt-8 mb-8 max-w-lg bg-white self-start rounded-md
+  md:mt-9
+  md:mb-9
 }
 
-.form-subheading{
+.card-subheading{
   @apply mt-5
 }
 
-.form-subheading__main{
+.card-subheading__main{
   @apply font-semibold text-sm text-color-primary-dark border-b border-gray-200 pb-4
   md:text-sm
 }
@@ -69,6 +92,47 @@
   @apply grid gap-y-2
 }
 
-.btn{
-  @apply text-center items-center hover:bg-color-primary-light text-white font-medium py-3 px-4  rounded-md focus:outline-none;
+
+/* FEE ROW */
+.fee__line{
+  @apply border-l-2 border-gray-300 h-3 mt-0 pt-0
 }
+
+.fee__item{
+  @apply pl-3
+}
+
+.fee__unit{
+  @apply text-xs font-bold inline-block w-24 text-gray-400
+  md:text-sm
+}
+
+.fee__description{
+  @apply text-xs font-normal text-gray-400
+  md:text-sm
+}
+
+/* REVIEW  ROW */
+.review-rows{
+  @apply grid gap-y-1
+}
+
+.review-row{
+  @apply flex justify-between py-1
+}
+
+.review-row__unit{
+  @apply text-xs font-semibold inline-block w-24 text-gray-500 text-right
+  md:text-sm inline-block w-max
+}
+.review-row__unit.emphasize{
+  @apply text-gray-500 text-sm
+  md:text-lg
+}
+
+.review-row__description{
+  @apply text-xs font-normal text-gray-400
+  md:text-sm
+}
+
+

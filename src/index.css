@@ -11,7 +11,60 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  @apply bg-gray-50
+}
+
+/* FORM STYLES */
+
+.form-group{
+  @apply mt-1 relative rounded-md shadow-sm;
+}
+
+.form-group__label{
+  @apply block text-xs font-medium text-gray-400 mb-2
+  /* tablet screens and above */
+  md:font-semibold md:text-sm; 
+}
+
+/* form labels that belong inside an input tag */
+.inner-label > .form-group__label{
+  @apply absolute origin-top-left mt-2 pl-3;
+}
+
+.form-group__error-message{
+  @apply text-red-700 text-xs mt-1
+}
+
+.form-group__input{
+  @apply focus:ring-indigo-500 shadow-none focus:border-indigo-500 block w-full pl-3 pr-12 pt-2 sm:text-sm border-gray-300 rounded-md
+  /* tablet screens and above */
+  md:text-lg;
+}
+
+.inner-label > .form-group__input{
+  @apply pt-7  
+}
+
+.select-group{
+  @apply absolute inset-y-0 right-0 flex items-center;
+}
+
+.form-group__select{
+  @apply bg-gray-100 border border-t  border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-3 pr-7 text-gray-500 sm:text-sm rounded-r-md;
+}
+
+
+
+/* BUTTON STYLES */
+.btn-hollow{
+  @apply inline-block align-baseline font-semibold border border-color-primary rounded-md py-3 px-4 font-medium text-center text-sm text-color-primary hover:text-blue-800;
+}
+
+.btn-full{
+  @apply bg-color-primary-light items-center hover:bg-color-primary-light text-center text-white font-medium py-3 px-4  rounded-md focus:outline-none;
+}
+
+.btn-green{
+  @apply bg-green-500 items-center hover:bg-green-600 text-white font-medium py-3 px-4 text-center  rounded-md focus:outline-none;
 }
