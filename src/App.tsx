@@ -17,7 +17,7 @@ function App() {
       </header>
 
       <div className="body">
-        <FormPayoutReceipt/>
+        <FormPayoutAmount/>
       </div>
 
     </div>

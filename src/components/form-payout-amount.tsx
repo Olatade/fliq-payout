@@ -3,7 +3,8 @@ import React from 'react';
 import '../styles/App.css';
  import { Formik, Form, Field, ErrorMessage } from 'formik';
  import * as Yup from "yup";
-
+ import { CircleFlag } from 'react-circle-flags';
+ import currencies from '../data/currencies';
  
 
 function FormPayoutAmount() {
@@ -47,9 +48,9 @@ function FormPayoutAmount() {
             <div className="pay-input__currency">
               <label className="sr-only" htmlFor="sendCurrency">Currency</label>
               <Field className="pay-input__currency--select" name="sendCurrency" as="select">
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
+                {currencies.map((currency) => (
+                  <option value={currency} key={currency}>{currency}</option>
+                ))}
               </Field>
             </div>
           </div>
@@ -74,9 +75,9 @@ function FormPayoutAmount() {
             <div className="pay-input__currency">
               <label className="sr-only" htmlFor="receiveCurrency">Currency</label>
               <Field className="pay-input__currency--select" name="receiveCurrency" as="select">
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
+                {currencies.map((currency) => (
+                  <option value={currency} key={currency} >{currency}</option>
+                ))}
               </Field>
             </div>
           </div>
