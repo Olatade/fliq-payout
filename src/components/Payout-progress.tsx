@@ -3,9 +3,13 @@ import '../styles/App.css';
 import '../styles/PayoutProgress.css';
 import 'alpinejs';
 
+interface prop{
+  stage: number;
+
+}
 
 
-function PayoutProgress() {
+const PayoutProgress = ( props: prop): any => {
 
   return (
     <div className="progress-bar">
@@ -14,41 +18,48 @@ function PayoutProgress() {
         <div className="left-pad"></div>
 
         <div className="step step-1">
-          <div className="step__inner active"></div>
+          {props.stage >= 1 ? <div className="step__inner active"></div> : <div className="step__inner"></div> }
+          {/* <div className="step__inner active"></div> */}
         </div>
 
 
         <div className="progress">
-          <div className="progress__inner">
-            <div className="progress__length" style={{ width: '100%' }}></div>
+          <div className='progress__inner'>
+            {props.stage > 1 ? <div className="progress__length" style={{ width: '100%' }}></div> : <div className="progress__length" style={{ width: '0' }}></div> }
+            {/* <div className="progress__length" style={{ width: '100%' }}></div> */}
           </div>
         </div>
 
 
         <div className="step step-2">
-          <div className="step__inner active"></div>
+        {props.stage >= 2 ? <div className="step__inner active"></div> : <div className="step__inner"></div> }
+          {/* <div className="step__inner active"></div> */}
         </div>
 
         <div className="progress">
           <div className="progress__inner">
-            <div className="progress__length" style={{ width: '20%' }}></div>
+          {props.stage > 2 ? <div className="progress__length" style={{ width: '100%' }}></div> : <div className="progress__length" style={{ width: '0' }}></div> }
+            {/* <div className="progress__length" style={{ width: '20%' }}></div> */}
           </div>
         </div>
 
         <div className="step step-3">
-          <div className=" step__inner"></div>
+        {props.stage >= 3 ? <div className="step__inner active"></div> : <div className="step__inner"></div> }
+          {/* <div className=" step__inner"></div> */}
         </div>
 
 
         <div className="progress">
           <div className="progress__inner">
-            <div className="progress__length" style={{ width: '0%' }}></div>
+          {props.stage == 4 ? <div className="progress__length" style={{ width: '100%' }}></div> : <div className="progress__length" style={{ width: '0' }}></div> }
+            {/* <div className="progress__length" style={{ width: '0%' }}></div> */}
           </div>
         </div>
 
 
-        <div className="step step-4">
-          <div className="step__inner"></div>
+        <div className="step step-4">          
+          {props.stage >= 4 ? <div className="step__inner active"></div> : <div className="step__inner"></div> }
+          {/* <div className="step__inner"></div> */}
         </div>
 
 
