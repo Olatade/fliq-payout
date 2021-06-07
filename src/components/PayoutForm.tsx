@@ -9,7 +9,7 @@ import keys from '../data/keys';
 
 
 async function fetchRate(baseCurrency, toCurrency, amount) {
-  const res = await fetch(`http://data.fixer.io/api/convert?access_key=${keys.fixer}&from=${baseCurrency}&to=${toCurrency}&amount=${amount}`);
+  // const res = await fetch(`https://data.fixer.io/api/convert?access_key=${keys.fixer}&from=${baseCurrency}&to=${toCurrency}&amount=${amount}`);
   // const result = await res.json();
   // return result;
 
