@@ -1,8 +1,8 @@
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import App from '../App';
-import FormPayoutReceipt from '../components/form-payout-receipt';
-import PayoutReview from '../components/payout-review';
+import FormPayoutAmount from '../components/form-payout-amount';
+
 
 // make sure every test is starting from thesame starting point
 afterEach(() =>{
@@ -15,8 +15,7 @@ test('should render payout form when App is rendered', () => {
   expect(appElement).toBeInTheDocument();
 });
 
-
-test('receipt component will render payout form when stage is not 2', () => {
+test('should render payout form when correct props are passed', () => {
   const values = {
     youSend: '',
     sendCurrency: 'JPY',
@@ -32,9 +31,7 @@ test('receipt component will render payout form when stage is not 2', () => {
     stage: 1
   }
   const updateValue = {};
-  render(<FormPayoutReceipt values={values} setValues={updateValue}/>);
-  const payoutForm = screen.getByTestId('payout-form');
-  expect(payoutForm).toBeInTheDocument();
+  render(<FormPayoutAmount values={values} setValues={updateValue}/>);
+  const appElement = screen.getByTestId('payout-form');
+  expect(appElement).toBeInTheDocument();
 });
-
-

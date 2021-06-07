@@ -1,0 +1,331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches stage 1 snapshot 1`] = `
+<div
+  className="progress-bar"
+  data-testid="payout-progress"
+>
+  <div
+    className="flex"
+  >
+    <div
+      className="left-pad"
+    />
+    <div
+      className="step step-1"
+    >
+      <div
+        className="step__inner active"
+      />
+    </div>
+    <div
+      className="progress"
+    >
+      <div
+        className="progress__inner"
+      >
+        <div
+          className="progress__length"
+          style={
+            Object {
+              "width": "0",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="step step-2"
+    >
+      <div
+        className="step__inner"
+      />
+    </div>
+    <div
+      className="progress"
+    >
+      <div
+        className="progress__inner"
+      >
+        <div
+          className="progress__length"
+          style={
+            Object {
+              "width": "0",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="step step-3"
+    >
+      <div
+        className="step__inner"
+      />
+    </div>
+    <div
+      className="progress"
+    >
+      <div
+        className="progress__inner"
+      >
+        <div
+          className="progress__length"
+          style={
+            Object {
+              "width": "0",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="step step-4"
+    >
+      <div
+        className="step__inner"
+      />
+    </div>
+    <div
+      className="right-pad"
+    />
+  </div>
+  <div
+    className="step-names"
+  >
+    <div>
+      Amount
+    </div>
+    <div>
+      Receipt
+    </div>
+    <div>
+      Review
+    </div>
+    <div>
+      Pay
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches stage 2 snapshot 1`] = `
+<div
+  className="progress-bar"
+  data-testid="payout-progress"
+>
+  <div
+    className="flex"
+  >
+    <div
+      className="left-pad"
+    />
+    <div
+      className="step step-1"
+    >
+      <div
+        className="step__inner active"
+      />
+    </div>
+    <div
+      className="progress"
+    >
+      <div
+        className="progress__inner"
+      >
+        <div
+          className="progress__length"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="step step-2"
+    >
+      <div
+        className="step__inner active"
+      />
+    </div>
+    <div
+      className="progress"
+    >
+      <div
+        className="progress__inner"
+      >
+        <div
+          className="progress__length"
+          style={
+            Object {
+              "width": "0",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="step step-3"
+    >
+      <div
+        className="step__inner"
+      />
+    </div>
+    <div
+      className="progress"
+    >
+      <div
+        className="progress__inner"
+      >
+        <div
+          className="progress__length"
+          style={
+            Object {
+              "width": "0",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="step step-4"
+    >
+      <div
+        className="step__inner"
+      />
+    </div>
+    <div
+      className="right-pad"
+    />
+  </div>
+  <div
+    className="step-names"
+  >
+    <div>
+      Amount
+    </div>
+    <div>
+      Receipt
+    </div>
+    <div>
+      Review
+    </div>
+    <div>
+      Pay
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches stage 3 snapshot 1`] = `
+<div
+  className="progress-bar"
+  data-testid="payout-progress"
+>
+  <div
+    className="flex"
+  >
+    <div
+      className="left-pad"
+    />
+    <div
+      className="step step-1"
+    >
+      <div
+        className="step__inner active"
+      />
+    </div>
+    <div
+      className="progress"
+    >
+      <div
+        className="progress__inner"
+      >
+        <div
+          className="progress__length"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="step step-2"
+    >
+      <div
+        className="step__inner active"
+      />
+    </div>
+    <div
+      className="progress"
+    >
+      <div
+        className="progress__inner"
+      >
+        <div
+          className="progress__length"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="step step-3"
+    >
+      <div
+        className="step__inner active"
+      />
+    </div>
+    <div
+      className="progress"
+    >
+      <div
+        className="progress__inner"
+      >
+        <div
+          className="progress__length"
+          style={
+            Object {
+              "width": "0",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="step step-4"
+    >
+      <div
+        className="step__inner"
+      />
+    </div>
+    <div
+      className="right-pad"
+    />
+  </div>
+  <div
+    className="step-names"
+  >
+    <div>
+      Amount
+    </div>
+    <div>
+      Receipt
+    </div>
+    <div>
+      Review
+    </div>
+    <div>
+      Pay
+    </div>
+  </div>
+</div>
+`;

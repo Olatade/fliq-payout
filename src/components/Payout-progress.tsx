@@ -5,14 +5,13 @@ import 'alpinejs';
 
 interface prop{
   stage: number;
-
 }
 
 
 const PayoutProgress = ( props: prop): any => {
 
   return (
-    <div className="progress-bar">
+    <div data-testid="payout-progress" className="progress-bar">
       <div className="flex">
 
         <div className="left-pad"></div>
