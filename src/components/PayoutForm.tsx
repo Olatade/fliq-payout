@@ -9,9 +9,11 @@ import keys from '../data/keys';
 
 
 async function fetchRate(baseCurrency, toCurrency, amount) {
-  // const res = await fetch(`http://data.fixer.io/api/convert?access_key=${keys.fixer}&from=${baseCurrency}&to=${toCurrency}&amount=${amount}`);
+  const res = await fetch(`http://data.fixer.io/api/convert?access_key=${keys.fixer}&from=${baseCurrency}&to=${toCurrency}&amount=${amount}`);
   // const result = await res.json();
   // return result;
+
+  // simulate fixer API success response
   const response = '{"success":true,"query":{"from":"USD","to":"JPY","amount":1000},"info":{"timestamp":1623020343,"rate":109.587503},"date":"2021-06-06","result":109666.503}';
   return (JSON.parse(response));
 }
@@ -29,19 +31,17 @@ const MyField = (props: any) => {
   // Do this when form inputs change
   React.useEffect(() => {
     let isCurrent = true;
-
-    // if  send amount and send currency is not empty request convertion from API
-    if (youSend && sendCurrency && youSend >= 0) {
-
+    // if the value in the send field is not empty and it is a number
+    if (youSend.trim() !== '' && parseInt(youSend.trim())  && youSend >= 0) {
+      console.log('pass');
       // Take away fliqpay percentage from amount customer is sending
-      // considering fliqpay charges 2% of the money being sent
-      const transferFee = ((2 / 100) * youSend);
+      // considering fliqpay charges 0.5% of the money being sent
+      const transferFee = ((0.5 / 100) * youSend);
       const amount = youSend - transferFee;
-      console.log(amount)
+      console.log(typeof(amount));
       fetchRate(sendCurrency, receiveCurrency, amount).then((result) => {
         console.log(result);
-
-        if (result) {
+        if (result && result['success'] === true) {
           if (!!isCurrent) {
             // prevent setting old values
             setFieldValue(props.name, addCommasToAmount(result.result));
@@ -66,7 +66,6 @@ const MyField = (props: any) => {
   return (
     <>
       <input {...props} {...field} />
-      {/* {!!meta.touched && !!meta.error && <div>{meta.error}</div>} */}
     </>
   );
 };
@@ -91,16 +90,19 @@ const FormPayoutAmount = (props: prop): any => {
           receiveCurrency: stateValues['receiveCurrency']
         }}
         validationSchema={Yup.object({
-          youSend: Yup.number().required(`Required`),
+          youSend: Yup.string().trim().min(2, 'must be more than two characters').required(`Required`),
           recipientGets: Yup.string()
             .required("Required"),
         })}
         onSubmit={(fields, { setSubmitting }) => {
-
+          
+          // update the stage
           props.setValues({
             ...stateValues,
             stage: 2
           })
+
+          // render the receipt form
           history.push("/receipt");
 
           // when the send field is changed
@@ -133,7 +135,7 @@ const FormPayoutAmount = (props: prop): any => {
           <div>
             <div className="form-group inner-label">
               <label className="form-group__label" htmlFor="youSend">You send</label>
-              <Field className="form-group__input" name="youSend" type="number" placeholder={stateValues['youSend']} />
+              <Field className="form-group__input" name="youSend" type="text" placeholder={stateValues['youSend']} />
               <div className="select-group">
                 <label className="sr-only" htmlFor="sendCurrency">Currency</label>
                 <Field className="form-group__select" name="sendCurrency" as="select" placeholder={stateValues['sendCurrency']}>

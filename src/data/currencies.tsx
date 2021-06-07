@@ -6,9 +6,7 @@
 */
 
 const currencies = [
-  'JPY', 'CAD', 'AUD'
+  'USD', 'JPY', 'CAD', 'AUD'
 ]
 
 export default currencies;
-
-// http://data.fixer.io/api/latest?access_key=13df86b4c847d62b82bf9773c23d173b&base=GBP&symbols=USD

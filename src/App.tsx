@@ -9,8 +9,8 @@ import {useState} from 'react';
 function App() {
   const [values, updateValue] = useState({
     youSend: '',
-    sendCurrency: 'JPY',
-    receiveCurrency: 'JPY',
+    sendCurrency: 'USD',
+    receiveCurrency: 'CAD',
     transferFee: '0.00',
     convertAmount: '0.00',
     guaranteedRate: '0.00',

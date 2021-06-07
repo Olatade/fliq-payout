@@ -39,16 +39,17 @@ const  FormPayoutReceipt = (props: prop): any => {
         validationSchema={Yup.object({
           email: Yup.string().email(),
           fullName: Yup.string()
-            .max(15, "Must be 15 characters or less")
+            .max(15, "Maximum of 15 characters allowed")
             .required("Required"),
           iban: Yup.string()
-            .max(15, "Must be 15 characters or less")
+            .min(10, "must be more than 10 characters")
+            .max(15, "Maximum of 15 characters allowed")
             .required("Required"),
           swift: Yup.string()
-            .max(15, "Must be 15 characters or less")
+            .min(10, "must be more than 10 characters")
+            .max(15, "Maximum of 15 characters allowed")
         })}
         onSubmit={(values, { setSubmitting }) => {
-          console.log(values)
           //update the state values
           props.setValues({
             ...stateValues,
@@ -60,13 +61,6 @@ const  FormPayoutReceipt = (props: prop): any => {
           })
           // go the the review page
           history.push("/review");
-  
-  
-  
-          // setTimeout(() => {
-          //   alert(JSON.stringify(values, null, 2));
-          //   setSubmitting(false);
-          // }, 400);
         }}
       >
         <Form className="card">
