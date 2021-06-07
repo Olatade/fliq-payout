@@ -100,13 +100,13 @@ const  FormPayoutReceipt = (props: prop): any => {
   
           <div className="tab-container">
             <div className="tab-container__buttons">
-              <button className={toggleState === 1 ? "tab-button active-tab-button" : "tab-button"} onClick={(e) => toggleTab(1)}>
+              <a className={toggleState === 1 ? "tab-button active-tab-button" : "tab-button"} onClick={(e) => toggleTab(1)}>
                 Inside Europe
-              </button>
+              </a>
   
-              <button className={toggleState === 2 ? "tab-button active-tab-button" : "tab-button"} onClick={(e) => toggleTab(2)}>
+              <a className={toggleState === 2 ? "tab-button active-tab-button" : "tab-button"} onClick={(e) => toggleTab(2)}>
                 Outside Europe
-              </button>
+              </a>
   
             </div>
   
