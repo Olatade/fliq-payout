@@ -1,6 +1,7 @@
 import { stat } from 'fs';
 import React from 'react';
 import '../styles/App.css';
+import FormPayoutAmount from '../components/form-payout-amount';
 
 interface prop{
   values: object;
@@ -10,7 +11,9 @@ interface prop{
 const PayoutReview = (props: prop): any => {
   const stateValues = props.values;
   console.log(stateValues);
-  return (
+
+  if(stateValues['stage'] == 3){
+    return (
       <div className="card">
         <div className="card-head">
           <p className="card-head__main">Review details of your transfer</p>
@@ -67,8 +70,12 @@ const PayoutReview = (props: prop): any => {
         <a className="btn-green mt-4" href="/">Confirm and continue</a>
         
       </div>
-
   );
+  }else{
+    return(
+      <FormPayoutAmount values={stateValues} setValues={props.setValues}/>
+    )
+  }
 }
 
  

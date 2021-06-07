@@ -1,7 +1,6 @@
  import {useFormikContext, useField, Formik, Form, Field, ErrorMessage } from 'formik';
  import React, { FC, useEffect } from 'react';
  import { useHistory } from "react-router-dom";
- import { Link } from 'react-router-dom';
  import * as Yup from "yup";
  import { CircleFlag } from 'react-circle-flags';
  import currencies from '../data/currencies';
