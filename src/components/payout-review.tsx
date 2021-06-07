@@ -1,8 +1,15 @@
+import { stat } from 'fs';
 import React from 'react';
 import '../styles/App.css';
 
-function PayoutReview () {
+interface prop{
+  values: object;
+  setValues: any;
+}
 
+const PayoutReview = (props: prop): any => {
+  const stateValues = props.values;
+  console.log(stateValues);
   return (
       <div className="card">
         <div className="card-head">
@@ -12,23 +19,23 @@ function PayoutReview () {
         <div className="review-rows">
           <p className="review-row">
             <span className="review-row__description">You send</span>
-            <span className="review-row__unit emphasize">1000 USD</span> 
+            <span className="review-row__unit emphasize">{stateValues['youSend']} {stateValues['sendCurrency']}</span> 
           </p>
           <p className="review-row">
             <span className="review-row__description">Total fees (included)</span>
-            <span className="review-row__unit ">1000 USD</span> 
+            <span className="review-row__unit ">{stateValues['transferFee']} {stateValues['sendCurrency']}</span> 
           </p>
           <p className="review-row">
             <span className="review-row__description">Amount we'll convert</span>
-            <span className="review-row__unit ">1000 USD</span> 
+            <span className="review-row__unit ">{stateValues['convertAmount']} {stateValues['sendCurrency']}</span> 
           </p>
           <p className="review-row">
             <span className="review-row__description">Guaranted rate</span>
-            <span className="review-row__unit ">1000 USD</span> 
+            <span className="review-row__unit ">{stateValues['guaranteedRate']} </span> 
           </p>
           <p className="review-row">
             <span className="review-row__description">Johnny gets</span>
-            <span className="review-row__unit emphasize">1,248.63 EUR</span> 
+            <span className="review-row__unit emphasize">{stateValues['recipientGets']} {stateValues['receiveCurrency']}</span> 
           </p>
         </div>
 
@@ -38,16 +45,23 @@ function PayoutReview () {
         <div className="review-rows">
           <p className="review-row">
             <span className="review-row__description">Name</span>
-            <span className="review-row__unit">Johnny Gbadamosi</span> 
+            <span className="review-row__unit">{stateValues['recipientFullname']}</span> 
           </p>
           <p className="review-row">
             <span className="review-row__description">Email address</span>
-            <span className="review-row__unit">johnny.gbadamosi@gmail.com</span> 
+            <span className="review-row__unit">{stateValues['recipientEmail']}</span> 
           </p>
           <p className="review-row">
             <span className="review-row__description">IBAN / Account number</span>
-            <span className="review-row__unit">DE898919013902102</span> 
+            <span className="review-row__unit">{stateValues['iban']}</span> 
           </p>
+          {/* If swift code was inputed by user, display it in the review */}
+          {stateValues['swift'] ? 
+            <p className="review-row">
+            <span className="review-row__description">IBAN / Account number</span>
+            <span className="review-row__unit">{stateValues['iban']}</span> 
+            </p> : ''
+          }
         </div>
 
         <a className="btn-green mt-4" href="/">Confirm and continue</a>

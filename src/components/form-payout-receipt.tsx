@@ -44,27 +44,25 @@ const  FormPayoutReceipt = (props: prop): any => {
           .max(15, "Must be 15 characters or less")
       })}
       onSubmit={(values, { setSubmitting }) => {
-        
+        console.log(values)
         //update the state values
         props.setValues({
           ...stateValues,
-          recipientEmail: values.email,
-          recipientFullname: values.fullName,
-          iban: values.iban,
-          swift: values.swift,
+          recipientEmail: values['email'],
+          recipientFullname: values['fullName'],
+          iban: values['iban'],
+          swift: values['swift'],
+          stage: 3
         })
         // go the the review page
         history.push("/review");
-        props.setValues({
-          ...stateValues,
-          stage: 3
-        })
 
 
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+
+        // setTimeout(() => {
+        //   alert(JSON.stringify(values, null, 2));
+        //   setSubmitting(false);
+        // }, 400);
       }}
     >
       <Form className="card">

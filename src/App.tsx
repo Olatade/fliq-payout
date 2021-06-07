@@ -9,13 +9,13 @@ import {useState} from 'react';
 
 function App() {
   const [values, updateValue] = useState({
-    youSend: '0.00',
+    youSend: '',
     sendCurrency: 'JPY',
     receiveCurrency: 'JPY',
     transferFee: '0.00',
     convertAmount: '0.00',
     guaranteedRate: '0.00',
-    recipientGets: '0.00',
+    recipientGets: '',
     recipientEmail: '',
     recipientFullname: '',
     iban: '',
@@ -32,7 +32,9 @@ function App() {
         ></Route>
         <Route path="/receipt" render={(props) =>(<FormPayoutReceipt values={values} setValues={updateValue}/>)}
         ></Route>
-        <Route path="/review" component={PayoutReview}></Route>
+        <Route path="/review" 
+          render={(props) =>(<PayoutReview values={values} setValues={updateValue}/>)}
+        ></Route>
       </Switch>
     </Router>
   );

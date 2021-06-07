@@ -50,9 +50,9 @@ const MyField = (props: any) => {
               ...props.stateValues,
               youSend: youSend,
               sendCurrency: sendCurrency,
-              transferFee: `${addCommasToAmount(transferFee)} ${sendCurrency}`,
-              convertAmount: `${addCommasToAmount(amount)} ${receiveCurrency}`,
-              guaranteedRate: (result.result/amount).toFixed(2),
+              transferFee: addCommasToAmount(transferFee),
+              convertAmount: addCommasToAmount(amount),
+              guaranteedRate: addCommasToAmount((result.result/amount).toFixed(2)),
               recipientGets: result.result
             });
           }
@@ -150,9 +150,9 @@ const FormPayoutAmount = ( props: prop): any => {
 
         <div className="Fee">
           <p className="fee__line"></p>
-          <p className="fee__item"><span className="fee__unit">{stateValues['transferFee']}{}</span> <span className="fee__description">Transfer fee</span></p>
+          <p className="fee__item"><span className="fee__unit">{stateValues['transferFee']} {stateValues['sendCurrency']}</span> <span className="fee__description">Transfer fee</span></p>
           <p></p>
-          <p className="fee__item"><span className="fee__unit">{stateValues['convertAmount']}</span> <span className="fee__description">Amount we'll convert</span></p>
+          <p className="fee__item"><span className="fee__unit">{stateValues['convertAmount']} {stateValues['receiveCurrency']}</span> <span className="fee__description">Amount we'll convert</span></p>
           <p></p>
           <p className="fee__item "><span className="fee__unit emphasize">{stateValues['guaranteedRate']}</span> <span className="fee__description emphasize">Guaranteed rate (1hr)</span></p>
           <p></p>
