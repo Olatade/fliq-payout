@@ -127,7 +127,7 @@ const FormPayoutAmount = (props: prop): any => {
 
       >
         <Form className="card">
-          <div className="card-head">
+          <div className="card-head no-underline">
             <p className="card-head__main">One-time Payout</p>
             <p className="card-head__sub">Send money internationally</p>
           </div>
@@ -149,14 +149,28 @@ const FormPayoutAmount = (props: prop): any => {
             <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="youSend" />
           </div>
 
-          <div className="Fee">
+          <div className="fee">
             <p className="fee__line"></p>
-            <p className="fee__item"><span className="fee__unit">{stateValues['transferFee']} {stateValues['sendCurrency']}</span> <span className="fee__description">Transfer fee</span></p>
-            <p></p>
-            <p className="fee__item"><span className="fee__unit">{stateValues['convertAmount']} {stateValues['receiveCurrency']}</span> <span className="fee__description">Amount we'll convert</span></p>
-            <p></p>
-            <p className="fee__item "><span className="fee__unit emphasize">{stateValues['guaranteedRate']}</span> <span className="fee__description emphasize">Guaranteed rate (1hr)</span></p>
-            <p></p>
+            <p className="fee__item">
+              <div className="fee__symbol">
+                <span className=" fee__symbol-text text-center w-full">-</span>
+              </div>
+              <span className="fee__unit">{stateValues['transferFee']} {stateValues['sendCurrency']}</span> <span className="fee__description">Transfer fee</span></p>
+            <p className="fee__line"></p>
+            <p className="fee__item">
+              <div className="fee__symbol">
+                <span className="fee__symbol-text text-center w-full">=</span>
+              </div>
+              <span className="fee__unit">{stateValues['convertAmount']} {stateValues['receiveCurrency']}</span> <span className="fee__description">Amount we'll convert</span>
+            </p>
+            <p className="fee__line"></p>
+            <p className="fee__item ">
+              <div className="fee__symbol">
+                <span className=" fee__symbol-text text-center w-full">x</span>
+              </div>
+              <span className="fee__unit emphasize">{stateValues['guaranteedRate']}</span> <span className="fee__description emphasize">Guaranteed rate (1hr)</span>
+            </p>
+            <p className="fee__line"></p>
           </div>
 
           {/* Recepient gets */}
