@@ -102,7 +102,7 @@
 /* FEE ROW */
 
 .fee {
-  @apply ml-9 -mt-4 -mb-4
+  @apply ml-9 -mt-4 -mb-4 
 }
 
 .fee__line{
@@ -110,8 +110,10 @@
 }
 
 .fee__item{
-  @apply pl-6 relative
+  @apply pl-6 relative  grid grid-cols-3 grid-flow-col gap-x-7
 }
+
+
 
 .fee__symbol{
   @apply w-6 h-6 pt-1 pb-1 absolute  bg-gray-200 rounded-full text-sm text-gray-800 flex
@@ -127,12 +129,12 @@
 
 
 .fee__unit{
-  @apply text-xs font-bold inline-block w-24 text-gray-400
+  @apply text-xs font-bold block min-w-max text-gray-400 
   md:text-sm
 }
 
 .fee__description{
-  @apply text-xs font-normal text-gray-400
+  @apply text-xs font-normal min-w-max text-gray-400 
   md:text-sm
 }
 

@@ -155,13 +155,14 @@ const FormPayoutAmount = (props: prop): any => {
               <div className="fee__symbol">
                 <span className=" fee__symbol-text text-center w-full">-</span>
               </div>
-              <span className="fee__unit">{stateValues['transferFee']} {stateValues['sendCurrency']}</span> <span className="fee__description">Transfer fee</span></p>
+              <span className="fee__unit">{stateValues['transferFee']} {stateValues['sendCurrency']}</span> 
+              <span className="fee__description">Transfer fee</span></p>
             <p className="fee__line"></p>
             <p className="fee__item">
               <div className="fee__symbol">
                 <span className="fee__symbol-text text-center w-full">=</span>
               </div>
-              <span className="fee__unit">{stateValues['convertAmount']} {stateValues['receiveCurrency']}</span> <span className="fee__description">Amount we'll convert</span>
+              <span className="fee__unit">{stateValues['convertAmount']} {stateValues['sendCurrency']}</span> <span className="fee__description">Amount we'll convert</span>
             </p>
             <p className="fee__line"></p>
             <p className="fee__item ">
