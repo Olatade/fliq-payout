@@ -1,5 +1,5 @@
 import logo from '../assets/img/fliqpay-logo.png';
-import PayoutProgress from './PayoutProgressBar';
+import PayoutProgress from './ProgressBar';
 
 interface prop{
   values: object;

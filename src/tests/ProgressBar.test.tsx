@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import App from '../App';
-import PayoutProgress from '../components/PayoutProgressBar';
+import PayoutProgress from '../components/ProgressBar';
 import renderer from 'react-test-renderer';
 
 // make sure every test is starting from thesame starting point
