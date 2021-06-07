@@ -1,23 +1,29 @@
-# Getting Started with Create React App
+# Getting Started with Fliq-payout
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Project simulates an app that allows you send money to someone in multiple currencies.
+
+You can view this project [Here](https://olatade.github.io/).
+
+## Getting started 
+
+run  `npm install` to install dependencies
+
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The page will reload if you make edits.
 
-### `npm test`
+### `npm run test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode. Testing is done with jest
+
 
 ### `npm run build`
 
@@ -27,20 +33,30 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm run coverage`
 
-### `npm run eject`
+Generates code coverage report
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Limitations (Fixer.io)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app intends to use Fixer API to generate live conversion rates but currently fixer API shows errors
+when request are made on an account with a free subscription plan
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Note: A mock response from fixer.io has been created to enable the app work**
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Tools 
+### Form validation
+[Formik](https://formik.org/) was used for form validation 
+
+
+# To do 
+- regEx form validation for inputs like fullname, IBAN ans Swift code
+- end-to-end testing with cypres
+- More Advanced component testing woth jest
+
+
+
+
