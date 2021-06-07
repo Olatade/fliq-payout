@@ -99,7 +99,12 @@ const FormPayoutAmount = ( props: prop): any => {
       })}
       onSubmit={(fields, { setSubmitting }) => {
         
+        props.setValues({
+          ...stateValues,
+          stage: 2          
+        })
         history.push("/receipt");
+
         // when the send field is changed
             // go and check for rates with the api
             // based on the rates gotte, fill the recipient gets field
@@ -117,10 +122,6 @@ const FormPayoutAmount = ( props: prop): any => {
         //   stage: 4          
         // })
 
-         props.setValues({
-          ...stateValues,
-          stage: 2          
-        })
       }}
 
     >
