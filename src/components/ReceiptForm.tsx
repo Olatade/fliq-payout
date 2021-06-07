@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
 import { useState } from 'react';
-import FormPayoutAmount from '../components/form-payout-amount';
+import FormPayoutAmount from './PayoutForm';
 
 
 interface prop{
@@ -20,6 +20,7 @@ const  FormPayoutReceipt = (props: prop): any => {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index: any) => {
+    // e.preventDefault();
     // set the toggleState to the index of the selected tab
     setToggleState(index);
   };
@@ -99,11 +100,11 @@ const  FormPayoutReceipt = (props: prop): any => {
   
           <div className="tab-container">
             <div className="tab-container__buttons">
-              <button className={toggleState === 1 ? "tab-button active-tab-button" : "tab-button"} onClick={() => toggleTab(1)}>
+              <button className={toggleState === 1 ? "tab-button active-tab-button" : "tab-button"} onClick={(e) => toggleTab(1)}>
                 Inside Europe
               </button>
   
-              <button className={toggleState === 2 ? "tab-button active-tab-button" : "tab-button"} onClick={() => toggleTab(2)}>
+              <button className={toggleState === 2 ? "tab-button active-tab-button" : "tab-button"} onClick={(e) => toggleTab(2)}>
                 Outside Europe
               </button>
   

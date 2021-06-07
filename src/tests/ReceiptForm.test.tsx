@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import App from '../App';
-import FormPayoutReceipt from '../components/form-payout-receipt';
+import FormPayoutReceipt from '../components/ReceiptForm';
 
 
 // make sure every test is starting from thesame starting point

@@ -1,8 +1,8 @@
 import './styles/App.css';
 import Nav from './components/Nav';
-import FormPayoutAmount from './components/form-payout-amount';
-import FormPayoutReceipt from './components/form-payout-receipt';
-import PayoutReview from './components/payout-review';
+import FormPayoutAmount from './components/PayoutForm';
+import FormPayoutReceipt from './components/ReceiptForm';
+import PayoutReview from './components/ReviewCard';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {useState} from 'react';
 

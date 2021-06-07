@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import App from '../App';
-import PayoutReview from '../components/payout-review';
+import PayoutReview from '../components/ReviewCard';
 
 
 // make sure every test is starting from thesame starting point
