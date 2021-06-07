@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/App.css';
 import '../styles/PayoutProgress.css';
-import 'alpinejs';
 
 interface prop{
   stage: number;

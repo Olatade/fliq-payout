@@ -1,4 +1,3 @@
-import { stat } from 'fs';
 import React from 'react';
 import '../styles/App.css';
 import FormPayoutAmount from '../components/form-payout-amount';

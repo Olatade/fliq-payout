@@ -1,7 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
-import 'alpinejs';
 import { useState } from 'react';
 import FormPayoutAmount from '../components/form-payout-amount';
 

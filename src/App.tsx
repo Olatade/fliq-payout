@@ -3,8 +3,7 @@ import Nav from './components/Nav';
 import FormPayoutAmount from './components/form-payout-amount';
 import FormPayoutReceipt from './components/form-payout-receipt';
 import PayoutReview from './components/payout-review';
-
-import { BrowserRouter, BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {useState} from 'react';
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
   });
 
   return (
-    <Router>
+    <Router data-testid="app">
       <Nav values={values} setValues={updateValue}/>
       <Switch>
         <Route path="/" exact
@@ -39,23 +38,5 @@ function App() {
     </Router>
   );
 } 
-
-
-// function App() {
-//   return (
-//     <div className="App">
-
-//       <header className="nav">
-//         <img src={logo} className="nav__logo" alt="logo" />
-//         <PayoutProgress/>
-//       </header>
-
-//       <div className="body">
-//         <FormPayoutAmount/>
-//       </div>
-
-//     </div>
-//   );
-// }
 
 export default App;
