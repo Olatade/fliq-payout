@@ -117,14 +117,11 @@ const FormPayoutAmount = ( props: prop): any => {
         //   recipientGets: '',
         //   stage: 4          
         // })
-  
-      
-        // setTimeout(() => {
-        //   console.log(props);
-        //   // alert(JSON.stringify(values, null, 2));
 
-        //   setSubmitting(false);
-        // }, 400);
+         props.setValues({
+          ...stateValues,
+          stage: 2          
+        })
       }}
 
     >

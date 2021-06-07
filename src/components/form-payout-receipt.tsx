@@ -1,11 +1,18 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
 import 'alpinejs';
 import { useState } from 'react';
 
 
+interface prop{
+  values: object;
+  setValues: any;
+}
 
-function FormPayoutReceipt() {
+const  FormPayoutReceipt = (props: prop): any => {
+    const stateValues = props.values;
+    const history = useHistory();
 
   // set hook to toggle tab state when tab is clicked
   const [toggleState, setToggleState] = useState(1);
@@ -17,13 +24,16 @@ function FormPayoutReceipt() {
 
   return (
     <Formik
-      initialValues={{ email: "", fullName: "", iban: "", swift: "" }}
+      initialValues={{ 
+        email: stateValues['recipientEmail'], 
+        fullName: stateValues['recipientFullname'], 
+        iban: stateValues['iban'], 
+        swift: stateValues['swift'],
+       }}
       
       // validation configuration using Yup
       validationSchema={Yup.object({
-        email: Yup.string()
-          .max(15, "Must be 15 characters or less"),
-
+        email: Yup.string().email(),
         fullName: Yup.string()
           .max(15, "Must be 15 characters or less")
           .required("Required"),
@@ -32,9 +42,25 @@ function FormPayoutReceipt() {
           .required("Required"),
         swift: Yup.string()
           .max(15, "Must be 15 characters or less")
-          .required("Required"),
       })}
       onSubmit={(values, { setSubmitting }) => {
+        
+        //update the state values
+        props.setValues({
+          ...stateValues,
+          recipientEmail: values.email,
+          recipientFullname: values.fullName,
+          iban: values.iban,
+          swift: values.swift,
+        })
+        // go the the review page
+        history.push("/review");
+        props.setValues({
+          ...stateValues,
+          stage: 3
+        })
+
+
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
@@ -89,7 +115,7 @@ function FormPayoutReceipt() {
               <div>
                 <div className="form-group">
                   <label className="form-group__label" htmlFor="iban">IBAN</label>
-                  <Field className="form-group__input" name="iban" type="text" placeholder="0.00" />
+                  <Field className="form-group__input" name="iban" type="text" placeholder="" />
                 </div>
                 <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="iban" />
               </div>
@@ -101,7 +127,7 @@ function FormPayoutReceipt() {
               <div>
                 <div className="form-group">
                   <label className="form-group__label" htmlFor="swift">SWIFT / BIC code</label>
-                  <Field className="form-group__input" name="swift" type="text" placeholder="BUKBGB22" />
+                  <Field className="form-group__input" name="swift" type="text" placeholder="" />
                 </div>
                 <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="swift" />
               </div>
@@ -110,7 +136,7 @@ function FormPayoutReceipt() {
               <div>
                 <div className="form-group">
                   <label className="form-group__label" htmlFor="iban">IBAN</label>
-                  <Field className="form-group__input" name="iban" type="text" placeholder="0.00" />
+                  <Field className="form-group__input" name="iban" type="text" placeholder="" />
                 </div>
                 <ErrorMessage render={msg => <div className="form-group__error-message">{msg}</div>} name="iban" />
               </div>

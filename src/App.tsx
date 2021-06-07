@@ -16,6 +16,10 @@ function App() {
     convertAmount: '0.00',
     guaranteedRate: '0.00',
     recipientGets: '0.00',
+    recipientEmail: '',
+    recipientFullname: '',
+    iban: '',
+    swift: '',
     stage: 1
   });
 
@@ -26,7 +30,8 @@ function App() {
         <Route path="/" exact
           render={(props) =>(<FormPayoutAmount values={values} setValues={updateValue}/>)}
         ></Route>
-        <Route path="/receipt" component={FormPayoutReceipt}></Route>
+        <Route path="/receipt" render={(props) =>(<FormPayoutReceipt values={values} setValues={updateValue}/>)}
+        ></Route>
         <Route path="/review" component={PayoutReview}></Route>
       </Switch>
     </Router>
