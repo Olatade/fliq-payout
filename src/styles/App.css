@@ -102,6 +102,7 @@
   @apply pl-3
 }
 
+
 .fee__unit{
   @apply text-xs font-bold inline-block w-24 text-gray-400
   md:text-sm
@@ -111,6 +112,14 @@
   @apply text-xs font-normal text-gray-400
   md:text-sm
 }
+
+.fee__unit.emphasize{
+  @apply text-color-primary-dark
+}
+.fee__description.emphasize{
+  @apply text-color-primary-dark
+}
+
 
 /* REVIEW  ROW */
 .review-rows{

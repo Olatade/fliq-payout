@@ -37,7 +37,7 @@ body{
 }
 
 .form-group__input{
-  @apply focus:ring-indigo-500 shadow-none focus:border-indigo-500 block w-full pl-3 pr-12 pt-2 sm:text-sm border-gray-300 rounded-md
+  @apply focus:ring-indigo-500 shadow-none text-color-primary-dark focus:border-indigo-500 block w-full pl-3 pr-12 pt-2 sm:text-sm border-gray-300 rounded-md
   /* tablet screens and above */
   md:text-lg;
 }
@@ -51,7 +51,8 @@ body{
 }
 
 .form-group__select{
-  @apply bg-gray-100 border border-t  border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-3 pr-7 text-gray-500 sm:text-sm rounded-r-md;
+  @apply bg-gray-100 border border-t  border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-3 pr-7 text-color-primary-dark font-semibold sm:text-sm rounded-r-md;
+  md:text-md
 }
 
 

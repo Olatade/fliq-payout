@@ -8,21 +8,23 @@ import { BrowserRouter, BrowserRouter as Router, Route, Switch} from 'react-rout
 import {useState} from 'react';
 
 function App() {
-  const [values, setValues] = useState({
+  const [values, updateValue] = useState({
     youSend: '0.00',
+    sendCurrency: 'JPY',
+    receiveCurrency: 'JPY',
     transferFee: '0.00',
-    collectAmount: '0.00',
+    convertAmount: '0.00',
     guaranteedRate: '0.00',
     recipientGets: '0.00',
-    stage: 4
+    stage: 1
   });
 
   return (
     <Router>
-      <Nav values={values} setValues={setValues}/>
+      <Nav values={values} setValues={updateValue}/>
       <Switch>
         <Route path="/" exact
-          render={(props) =>(<FormPayoutAmount values={values} setValues={setValues}/>)}
+          render={(props) =>(<FormPayoutAmount values={values} setValues={updateValue}/>)}
         ></Route>
         <Route path="/receipt" component={FormPayoutReceipt}></Route>
         <Route path="/review" component={PayoutReview}></Route>
