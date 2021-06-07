@@ -14,7 +14,7 @@ const PayoutReview = (props: prop): any => {
 
   if(stateValues['stage'] == 3){
     return (
-      <div className="card">
+      <div className="card" data-testid="review-card">
         <div className="card-head">
           <p className="card-head__main">Review details of your transfer</p>
         </div>

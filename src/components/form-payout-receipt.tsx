@@ -26,7 +26,8 @@ const  FormPayoutReceipt = (props: prop): any => {
   };
   if(stateValues['stage'] == 2 ){
     return (
-      <Formik
+      <div data-testid="receipt-form">
+              <Formik
         initialValues={{ 
           email: stateValues['recipientEmail'], 
           fullName: stateValues['recipientFullname'], 
@@ -154,6 +155,7 @@ const  FormPayoutReceipt = (props: prop): any => {
   
         </Form>
       </Formik>
+      </div>
     );
   }else{
     return(
