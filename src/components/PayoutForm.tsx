@@ -26,12 +26,12 @@ const MyField = (props: any) => {
 
   const [field, meta] = useField(props);
 
-  // Do this when any of the values change
+  // Do this when form inputs change
   React.useEffect(() => {
     let isCurrent = true;
 
-    // if send send amount and send currency is not empty request convertion from API
-    if (youSend.trim() !== '' && sendCurrency.trim() !== '' && youSend > 0) {
+    // if  send amount and send currency is not empty request convertion from API
+    if (youSend && sendCurrency && youSend >= 0) {
 
       // Take away fliqpay percentage from amount customer is sending
       // considering fliqpay charges 2% of the money being sent
@@ -91,11 +91,8 @@ const FormPayoutAmount = (props: prop): any => {
           receiveCurrency: stateValues['receiveCurrency']
         }}
         validationSchema={Yup.object({
-          youSend: Yup.string()
-            .max(15, "Must be 15 characters or less")
-            .required(`Required`),
+          youSend: Yup.number().required(`Required`),
           recipientGets: Yup.string()
-            .max(15, "Must be 15 characters or less")
             .required("Required"),
         })}
         onSubmit={(fields, { setSubmitting }) => {
@@ -136,7 +133,7 @@ const FormPayoutAmount = (props: prop): any => {
           <div>
             <div className="form-group inner-label">
               <label className="form-group__label" htmlFor="youSend">You send</label>
-              <Field className="form-group__input" name="youSend" type="text" placeholder={stateValues['youSend']} />
+              <Field className="form-group__input" name="youSend" type="number" placeholder={stateValues['youSend']} />
               <div className="select-group">
                 <label className="sr-only" htmlFor="sendCurrency">Currency</label>
                 <Field className="form-group__select" name="sendCurrency" as="select" placeholder={stateValues['sendCurrency']}>
